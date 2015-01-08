@@ -23,6 +23,9 @@ end
 
 class String
   define_method(:weekday) do
+
+    #check for empty input
+    
     date_array_of_strings = self.split('/')
     date_array = []
 

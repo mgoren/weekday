@@ -8,7 +8,13 @@ get('/') do
 end
 
 get('/weekday') do
-  @date = params.fetch('date')
-  @result = @date.weekday()
+  date = params.fetch('date')
+  if date==""
+    @output_string = "Please enter a valid date."
+  else
+    result = date.weekday()
+    @output_string = date + ", " + result
+  end
+
   erb(:weekday)
 end
