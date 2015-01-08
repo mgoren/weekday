@@ -9,10 +9,11 @@ end
 
 get('/weekday') do
   date = params.fetch('date')
-  if date==""
-    @output_string = "Please enter a valid date."
+  result = date.weekday()
+
+  if result == "error"
+    @output_string = "Invalid input. Please try again."
   else
-    result = date.weekday()
     @output_string = date + ", " + result
   end
 

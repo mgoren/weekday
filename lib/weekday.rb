@@ -25,7 +25,10 @@ class String
   define_method(:weekday) do
 
     #check for empty input
-    
+    if self==""
+      return "error"
+    end
+
     date_array_of_strings = self.split('/')
     date_array = []
 
@@ -38,9 +41,9 @@ class String
     year = date_array[2]
 
     if month == 0 || day == 0 || year == 0
-      return "Invalid input! Put in numbers, dummy!"
+      return "error"
     elsif (month < 1 || month > 12) || (day < 1 || day > 31)
-      return "Invalid input! Enter a valid date."
+      return "error"
     end
 
     date = Time.new(year,month,day)
