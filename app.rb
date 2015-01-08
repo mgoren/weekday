@@ -8,6 +8,7 @@ get('/') do
 end
 
 get('/weekday') do
-
+  @date = params.fetch('date')
+  @result = @date.weekday()
   erb(:weekday)
 end

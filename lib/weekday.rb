@@ -1,6 +1,7 @@
 class Time
   define_method(:determine_weekday) do
     date = self
+
     if date.sunday?()
       return "Sunday"
     elsif date.monday?()
@@ -16,6 +17,7 @@ class Time
     else
       return "Saturday"
     end
+
   end
 end
 
@@ -33,7 +35,7 @@ class String
     year = date_array[2]
 
     if month == 0 || day == 0 || year == 0
-      return "Invalid input! Put in a properly formatted date, dummy!"
+      return "Invalid input! Put in numbers, dummy!"
     elsif (month < 1 || month > 12) || (day < 1 || day > 31)
       return "Invalid input! Enter a valid date."
     end
@@ -42,7 +44,6 @@ class String
     weekday = date.determine_weekday()
 
     return weekday
-
 
   end
 end
